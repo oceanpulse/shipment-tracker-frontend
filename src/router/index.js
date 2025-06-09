@@ -1,20 +1,20 @@
-import {createRouter, createWebHistory} from 'vue-router';
+import { createRouter, createWebHistory } from 'vue-router';
 import HomeView from '../views/HomeView.vue';
-import ShipmentDetailView from '../views/ShipmentDetailView.vue'; // must create this soon
+import ShipmentDataView from '../views/ShipmentDataView.vue'; // Ensure this filename matches exactly
 
 const router = createRouter({
-    histroy: createWebHistory(import.meta.env.BASE_URL),
+    history: createWebHistory(import.meta.env.BASE_URL), // Typo: histroy -> history
     routes: [
         {
-         path: '/',
-         name: 'home',
-         component: HomeView 
+            path: '/',
+            name: 'home',
+            component: HomeView
         },
         {
-         path: '/shipment/:id', // shows details of a shipment
-         name: 'shipment-detail',
-         component: ShipmentDetailView,
-         props: true // allows passing route params as props to the component
+            path: '/shipment/:id',
+            name: 'shipment-detail',
+            component: ShipmentDataView,
+            props: true
         }
     ]
 })
